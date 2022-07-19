@@ -17,6 +17,7 @@ def run():
                 date[dateTimeIdx] = inputDate
             except ValueError as e:
                 print('ERROR' + str(e))
+                # restart the function
                 return run()
             
             # input Time
@@ -26,6 +27,7 @@ def run():
                 time[dateTimeIdx] = inputTime
             except ValueError as e:
                 print('ERROR' + str(e))
+                # restart the function
                 return run()
 
 
@@ -43,8 +45,9 @@ def run():
                 result = 'Thank you very much. I will notify them!'
                 print(result)
                 return result
-                # break
     except:
         print('Oops! Write an integer here. Try again......!')
+        # restart the function
+        return run()
 
 run()
