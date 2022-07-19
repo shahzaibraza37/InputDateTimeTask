@@ -1,4 +1,3 @@
-from multiprocessing.sharedctypes import Value
 from unittest import mock
 from unittest import TestCase
 import main
@@ -13,7 +12,7 @@ class Test(TestCase):
         timeStamp = dateTimeObj.strftime('%H:%M')
         mocked_input.side_effect = [1, dateStamp, timeStamp]
         result = main.run()
-        self.assertEqual(result, 'Thank you very much. I will notify them!')
+        self.assertEqual(result, 'Finished!')
     
     @mock.patch('main.input', create=True)
     def testDate(self, mocked_input):
