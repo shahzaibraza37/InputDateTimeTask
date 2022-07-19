@@ -29,22 +29,24 @@ def run():
                 print('ERROR' + str(e))
                 # restart the function
                 return run()
+        result = 'Thank you very much. I will notify them! \n ----------'
+        print(result)
 
 
         checkIdx = 0
+        idx = 1
         while 1:
             dateTimeObj = datetime.now()
             dateStamp = dateTimeObj.strftime('%d.%m.%Y')
             timeStamp = dateTimeObj.strftime('%H:%M')
-            idx = 1
             if dateStamp == date[checkIdx] and timeStamp == time[checkIdx]:
                 print('The time has been reached to perform the task', str(idx), '(' + date[checkIdx] +' - '+ time[checkIdx] +')')
                 idx += 1
                 checkIdx += 1
             if checkIdx == len(time):
-                result = 'Thank you very much. I will notify them!'
-                print(result)
-                return result
+                endResult = 'Finished!'
+                return endResult
+            
     except:
         print('Oops! Write an integer here. Try again......!')
         # restart the function
