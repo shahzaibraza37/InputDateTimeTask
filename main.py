@@ -16,7 +16,7 @@ def run():
                 datetime.strptime(inputDate, '%d.%m.%Y')
                 date[dateTimeIdx] = inputDate
             except ValueError as e:
-                print('ERROR' + e)
+                print('ERROR' + str(e))
                 return run()
             
             # input Time
@@ -25,7 +25,7 @@ def run():
                 datetime.strptime(inputTime, '%H:%M')
                 time[dateTimeIdx] = inputTime
             except ValueError as e:
-                print('ERROR' + e)
+                print('ERROR' + str(e))
                 return run()
 
 
